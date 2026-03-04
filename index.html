@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Sky Landscaping | Oregon City, OR</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --p: #2E7D32; --pd: #1b5e20; --s: #A5853D; --a: #F1F8E9; --w: #fff; --l: #f5f9f0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; color: #1a2e1a; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+  nav { background: var(--p); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,.3); }
+  .logo { color: var(--w); font-size: 1.4rem; font-weight: 800; }
+  .logo span { color: #f9e4a3; }
+  .nav-ph { color: #f9e4a3; font-weight: 700; font-size: 1.05rem; }
+  .hero { background: linear-gradient(135deg, #1b5e20 0%, #2E7D32 50%, #33691e 100%); color: var(--w); padding: 6rem 2rem 5rem; text-align: center; }
+  .badge { display: inline-block; background: var(--s); color: var(--w); font-size: .78rem; font-weight: 700; padding: .3rem 1rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; }
+  h1 { font-size: clamp(1.9rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.15; max-width: 820px; margin: 0 auto 1.2rem; }
+  .hero p { font-size: 1.15rem; opacity: .88; max-width: 580px; margin: 0 auto 2rem; }
+  .cta { display: inline-block; background: var(--s); color: var(--w); font-size: 1.1rem; font-weight: 800; padding: 1rem 2.5rem; border-radius: 4px; box-shadow: 0 4px 20px rgba(165,133,61,.4); transition: transform .2s, box-shadow .2s; }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(165,133,61,.5); }
+  .hero-ph { display: block; margin-top: 1.2rem; font-size: 1rem; opacity: .8; }
+  .stats { background: #1b2e1b; color: var(--w); padding: 2.5rem 2rem; }
+  .stats-g { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; text-align: center; }
+  .sn { font-size: 2rem; font-weight: 900; color: #f9e4a3; display: block; }
+  .sl { font-size: .88rem; opacity: .78; margin-top: .25rem; }
+  section.svc { padding: 5rem 2rem; background: var(--l); }
+  section.about { padding: 5rem 2rem; background: var(--w); }
+  section.trust { padding: 4rem 2rem; background: var(--p); color: var(--w); text-align: center; }
+  section.contact { padding: 5rem 2rem; background: var(--l); }
+  .lbl { text-align: center; color: var(--p); font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: .4rem; }
+  h2.sec { text-align: center; font-size: clamp(1.5rem, 3vw, 2.3rem); font-weight: 800; color: #1a2e1a; margin-bottom: .7rem; }
+  .sub { text-align: center; color: #555; max-width: 540px; margin: 0 auto 2.8rem; }
+  .cards { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap: 1.5rem; }
+  .card { background: var(--w); border-radius: 8px; padding: 2rem 1.5rem; box-shadow: 0 2px 15px rgba(0,0,0,.07); border-top: 4px solid var(--p); transition: transform .2s, box-shadow .2s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(46,125,50,.14); }
+  .ci { font-size: 2.4rem; margin-bottom: .9rem; }
+  .card h3 { font-size: 1.05rem; font-weight: 700; color: var(--p); margin-bottom: .45rem; }
+  .card p { font-size: .91rem; color: #555; }
+  .about-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .about-inner p { font-size: 1.08rem; color: #444; line-height: 1.85; }
+  .trust h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 2rem; }
+  .badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; max-width: 700px; margin: 0 auto; }
+  .bdg { background: rgba(255,255,255,.13); border: 2px solid rgba(249,228,163,.3); border-radius: 8px; padding: .9rem 1.4rem; font-weight: 700; font-size: .92rem; text-align: center; }
+  .bdg span { display: block; font-size: 1.4rem; margin-bottom: .25rem; color: #f9e4a3; }
+  .contact-inner { max-width: 680px; margin: 0 auto; }
+  form { background: var(--w); padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 25px rgba(0,0,0,.08); }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fg { display: flex; flex-direction: column; gap: .38rem; margin-bottom: 1rem; }
+  .fg label { font-size: .88rem; font-weight: 600; color: #1a2e1a; }
+  .fg input, .fg textarea { border: 2px solid #e0e0e0; border-radius: 6px; padding: .72rem 1rem; font-size: 1rem; font-family: inherit; transition: border-color .2s; }
+  .fg input:focus, .fg textarea:focus { outline: none; border-color: var(--p); }
+  .fg textarea { resize: vertical; min-height: 115px; }
+  .fsub { width: 100%; background: var(--p); color: var(--w); border: none; border-radius: 6px; padding: 1rem; font-size: 1.08rem; font-weight: 700; cursor: pointer; transition: background .2s; }
+  .fsub:hover { background: var(--pd); }
+  .cph { text-align: center; margin-top: 1.4rem; font-size: 1.15rem; color: var(--p); font-weight: 700; }
+  footer { background: #1b2e1b; color: rgba(255,255,255,.68); text-align: center; padding: 1.5rem; font-size: .85rem; }
+  footer strong { color: var(--w); }
+  .pw { font-size: .72rem; opacity: .45; margin-top: .3rem; }
+  @media(max-width:600px) { .stats-g, .frow { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Big Sky <span>Landscaping</span></div>
+  <a class="nav-ph" href="tel:+15035551234">(503) 555-1234</a>
+</nav>
+<section class="hero">
+  <div class="badge">Award-Winning Design | 30+ Years</div>
+  <h1>Award-Winning Landscapes Across Portland Metro for 30+ Years</h1>
+  <p>From stunning landscape designs to pools, hardscaping, and irrigation, Big Sky transforms Oregon City and Portland Metro properties into outdoor masterpieces.</p>
+  <a class="cta" href="#contact">Request a Design Consultation</a>
+  <a class="hero-ph" href="tel:+15035551234">Or call: (503) 555-1234</a>
+</section>
+<section class="stats">
+  <div class="stats-g">
+    <div><span class="sn">30+</span><div class="sl">Years in Business</div></div>
+    <div><span class="sn">Award-Winning</span><div class="sl">Landscape Design</div></div>
+    <div><span class="sn">Portland Metro</span><div class="sl">&amp; SW Washington</div></div>
+  </div>
+</section>
+<section class="svc">
+  <div class="lbl">Our Services</div>
+  <h2 class="sec">Complete Outdoor Living Solutions</h2>
+  <p class="sub">Big Sky creates outdoor spaces that win awards and, more importantly, bring our clients joy every single day.</p>
+  <div class="cards">
+    <div class="card"><div class="ci">&#127795;</div><h3>Landscape Design</h3><p>Award-winning custom designs that respect your site, match your lifestyle, and create an outdoor space that feels genuinely yours.</p></div>
+    <div class="card"><div class="ci">&#9968;</div><h3>Hardscaping</h3><p>Patios, retaining walls, walkways, and outdoor structures built to last with materials chosen for Portland's wet climate.</p></div>
+    <div class="card"><div class="ci">&#128167;</div><h3>Irrigation Systems</h3><p>Smart, water-efficient irrigation systems designed for Oregon's rainfall patterns to keep your landscape healthy year-round.</p></div>
+    <div class="card"><div class="ci">&#127944;</div><h3>Pools &amp; Spas</h3><p>Custom pool and spa design and installation that turns your backyard into a complete resort-quality outdoor living space.</p></div>
+  </div>
+</section>
+<section class="about">
+  <div class="about-inner">
+    <div class="lbl">About Big Sky</div>
+    <h2 class="sec" style="margin-bottom:1.1rem;">Portland Metro's Premier Landscape Company</h2>
+    <p>Big Sky Landscaping has been creating award-winning outdoor environments across the Portland Metro and SW Washington for over 30 years. Our design team brings an artist's eye and an engineer's discipline to every project, ensuring that your landscape is not just beautiful, but built to thrive in the Pacific Northwest climate. Whether you're envisioning a serene garden retreat, a dramatic hardscape, or a custom pool installation, Big Sky delivers the craftsmanship and design vision to make it real.</p>
+  </div>
+</section>
+<section class="trust">
+  <h2>Our Track Record</h2>
+  <div class="badges">
+    <div class="bdg"><span>&#127942;</span>Award-Winning Design Team</div>
+    <div class="bdg"><span>&#128200;</span>30+ Years in Business</div>
+    <div class="bdg"><span>&#127758;</span>Portland Metro &amp; SW Washington</div>
+    <div class="bdg"><span>&#9989;</span>Licensed &amp; Insured in Oregon</div>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="lbl">Get Started</div>
+    <h2 class="sec" style="margin-bottom:.5rem;">Request a Design Consultation</h2>
+    <p class="sub">Let's talk about your outdoor vision. Consultations are free and pressure-free.</p>
+    <form>
+      <div class="frow">
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="Jane Smith"></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(503) 555-0000"></div>
+      </div>
+      <div class="fg"><label>Email Address</label><input type="email" placeholder="jane@example.com"></div>
+      <div class="fg"><label>Describe Your Dream Outdoor Space</label><textarea placeholder="Landscape design, pool, hardscaping, irrigation? Tell us your vision..."></textarea></div>
+      <button type="submit" class="fsub">Request My Consultation &rarr;</button>
+    </form>
+    <div class="cph">Call us: <a href="tel:+15035551234">(503) 555-1234</a></div>
+  </div>
+</section>
+<footer>
+  <strong>Big Sky Landscaping</strong> &mdash; Oregon City, OR<br>
+  <div class="pw">Powered by Remarketize</div>
+</footer>
+</body>
+</html>
